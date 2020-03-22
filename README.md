@@ -7,7 +7,7 @@ A Terraform module to bootstrap S3 state storage.
 ```hcl
 
 module "my_storage" {
-    name = "my-s3-storage"
+    name        = "my-s3-storage"
     common_tags = {
         Project    = "my-project"
         Maintainer = "me"
