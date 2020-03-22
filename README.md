@@ -24,11 +24,11 @@ module "my_storage" {
 
 | Variable | Description | Type | Default value |
 |----------|-------------|------|---------------|
+| `name` | Name for the S3 bucket and dynamodb table | `string` | |
 | `versioning` | Should the S3 bucket keep old state versions? | `bool` | `true` |
 | `read_capacity` | DynamoDB Read capacity | `number` | `5` |
 | `write_capacity` | DynamoDB Write capacity | `number` | `5` |
-| `name` | Name prefix for this S3 state storage | `string` | |
-| `common_tags` | Tags that will be added to all created resources | `map(string)`  | |
+| `common_tags` | Tags that will be added to all created resources | `map(string)`  | `{}` |
 
 ## Outputs
 

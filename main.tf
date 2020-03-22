@@ -17,6 +17,7 @@ resource "aws_s3_bucket" "terraform_state" {
   })
 }
 
+###############################################################################
 # Prevent state leaks by blocking public access
 resource "aws_s3_bucket_public_access_block" "terraform_state" {
   bucket = aws_s3_bucket.terraform_state.id
@@ -26,6 +27,7 @@ resource "aws_s3_bucket_public_access_block" "terraform_state" {
   ignore_public_acls  = true
 }
 
+###############################################################################
 # Dynamodb table to do state locking
 resource "aws_dynamodb_table" "terraform_state_lock" {
   name           = "${var.name}-lock"
