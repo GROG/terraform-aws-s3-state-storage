@@ -30,10 +30,9 @@ resource "aws_s3_bucket_public_access_block" "terraform_state" {
 ###############################################################################
 # Dynamodb table to do state locking
 resource "aws_dynamodb_table" "terraform_state_lock" {
-  name           = "${var.name}-lock"
-  read_capacity  = var.read_capacity
-  write_capacity = var.write_capacity
-  hash_key       = "LockID"
+  name         = "${var.name}-lock"
+  hash_key     = "LockID"
+  billing_mode = "PAY_PER_REQUEST"
 
   attribute {
     name = "LockID"

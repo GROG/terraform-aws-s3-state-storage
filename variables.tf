@@ -19,22 +19,6 @@ Should the S3 bucket keep old state versions?
 EOF
 }
 
-variable "read_capacity" {
-  type        = number
-  default     = 5
-  description = <<EOF
-DynamoDB Read capacity
-EOF
-}
-
-variable "write_capacity" {
-  type        = number
-  default     = 5
-  description = <<EOF
-DynamoDB write capacity
-EOF
-}
-
 variable "common_tags" {
   type        = map(string)
   default     = {}
