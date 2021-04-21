@@ -12,8 +12,8 @@ resource "aws_s3_bucket" "terraform_state" {
     prevent_destroy = "true"
   }
 
-  tags = merge( var.common_tags, {
-      "Name" = var.name
+  tags = merge(var.common_tags, {
+    "Name" = var.name
   })
 }
 
@@ -39,8 +39,8 @@ resource "aws_dynamodb_table" "terraform_state_lock" {
     type = "S"
   }
 
-  tags = merge( var.common_tags, {
-      "Name" = "${var.name}-lock"
+  tags = merge(var.common_tags, {
+    "Name" = "${var.name}-lock"
   })
 }
 
