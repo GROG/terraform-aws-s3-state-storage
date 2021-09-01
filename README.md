@@ -27,6 +27,7 @@ module "my_storage" {
 | `name` | Name for the S3 bucket and dynamodb table | `string` | |
 | `versioning` | Should the S3 bucket keep old state versions? | `bool` | `true` |
 | `common_tags` | Tags that will be added to all created resources | `map(string)`  | `{}` |
+| `force_destroy` | Should the S3 bucket be destroyed even if data is present? | `bool` | `false` |
 
 ## Outputs
 
