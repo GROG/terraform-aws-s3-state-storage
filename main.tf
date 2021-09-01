@@ -8,9 +8,7 @@ resource "aws_s3_bucket" "terraform_state" {
     enabled = var.versioning
   }
 
-  lifecycle {
-    prevent_destroy = "true"
-  }
+  force_destroy = var.force_destroy
 
   tags = merge(var.common_tags, {
     "Name" = var.name

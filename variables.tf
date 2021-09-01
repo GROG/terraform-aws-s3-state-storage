@@ -12,7 +12,7 @@ EOF
 # Optional variables
 
 variable "versioning" {
-  type        = string
+  type        = bool
   default     = true
   description = <<EOF
 Should the S3 bucket keep old state versions?
@@ -24,6 +24,14 @@ variable "common_tags" {
   default     = {}
   description = <<EOF
 Tags that will be added to all created resources
+EOF
+}
+
+variable "force_destroy" {
+  type        = bool
+  default     = false
+  description = <<EOF
+Force destroy the state bucket
 EOF
 }
 
