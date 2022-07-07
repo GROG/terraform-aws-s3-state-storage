@@ -19,6 +19,17 @@ Should the S3 bucket keep old state versions?
 EOF
 }
 
+variable "encryption" {
+  type        = bool
+  default     = true
+  description = <<EOF
+Should server side encryption be enabled by default?
+
+If enabled (default) transparent AES256 encryption with S3 managed keys is
+used.
+EOF
+}
+
 variable "common_tags" {
   type        = map(string)
   default     = {}
